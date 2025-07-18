@@ -1,0 +1,187 @@
+/* --- Global & Body --- */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #333 url('https://images.unsplash.com/photo-1554034483-04fda0d3507b?q=80&w=2070') no-repeat center center/cover;
+}
+
+/* --- Main Container --- */
+.upload-container {
+    width: 380px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(30, 30, 30, 0.45);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #f0f0f0;
+}
+
+.component-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.upload-title {
+    margin-top: 25px;
+    /* This needs a layer to be clickable */
+    position: relative;
+    z-index: 1;
+}
+
+
+/* --- Country Selector & Dropdown --- */
+.country-select-wrapper {
+  position: relative;
+  /* This section gets a higher layer */
+  z-index: 2; 
+}
+
+.country-select {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    cursor: pointer;
+    color: #333;
+}
+
+.country-flag {
+    width: 24px;
+    margin-right: 12px;
+    border: 1px solid #eee;
+}
+
+.country-select span {
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.country-select .fa-chevron-down {
+    color: #888;
+    transition: transform 0.3s;
+}
+
+.country-select .fa-chevron-down.open {
+  transform: rotate(180deg);
+}
+
+.country-dropdown {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: #333;
+  padding: 5px;
+  box-sizing: border-box;
+  /* The dropdown list gets the highest layer */
+  z-index: 100;
+}
+
+.country-search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+
+.country-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.country-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.country-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.country-list li.no-results {
+  padding: 10px;
+  text-align: center;
+  color: #888;
+  cursor: default;
+}
+
+
+/* --- Upload Buttons --- */
+.upload-options-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    /* This section also gets a layer to be clickable */
+    position: relative;
+    z-index: 1;
+}
+
+.upload-option-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    color: #333;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.upload-option-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: translateY(-3px);
+}
+
+.upload-option-btn i {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.upload-option-btn.primary {
+    grid-column: span 5;
+    background-color: #3b82f6;
+    color: white;
+    flex-direction: row;
+}
+
+.upload-option-btn.primary:hover {
+     background-color: #2563eb;
+}
+
+.upload-option-btn.primary i {
+    color: white;
+    margin: 0 8px 0 0;
+    font-size: 20px;
+}
+
+.upload-option-btn.primary span {
+    font-size: 14px;
+    font-weight: 600;
+}
